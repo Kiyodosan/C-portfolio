@@ -1,5 +1,7 @@
-// Written in C (not C# nor C++)
-// Random number generator (within a defined range) + sort function
+/*
+Written in C
+Random number generator (within a defined range) + sort function
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
