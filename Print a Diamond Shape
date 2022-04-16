@@ -1,0 +1,60 @@
+/*
+Written in C
+Generates a diamond shape within a defined range
+*/
+
+#include <time.h>
+#include <stdlib.h>
+
+#define UPPER_LIMIT         41                                              /* boundary for max number */
+#define LOWER_LIMIT         21                                              /* boundary for min number */
+
+int main(void)
+{
+    char studentName[12] = "Tyler Odo";
+    printf("%s - Project 2", studentName);
+
+    int sampleSize;
+
+    srand(time(NULL));                                                      /* seed random number */
+    sampleSize = rand() % (UPPER_LIMIT - LOWER_LIMIT + 1) + LOWER_LIMIT;
+
+    if (sampleSize % 2 == 0) sampleSize++;                                  /* change even numbers to odd */
+
+    printf ("\nNumber of lines: %d \n", sampleSize);
+    sampleSize = sampleSize / 2;                                            /* Halve sample size for triangle formula */
+
+    char firstInitial = 'T';                                                /* characters for the putchar() function */
+    char lastInitial = 'O';
+    char specialChar = '=';
+
+    int x, y, z;                                                            /* triangle print loop */
+    for(x = 0; x <= sampleSize; x++){
+        for(y = 0; y <= (sampleSize - x); y++)
+            printf(" ");
+        for(z = 1; z <= ((2 * x) - 1); z++)
+            putchar(firstInitial);
+
+        printf("\n");
+    }
+
+    int w;                                                                  /* special character line */
+    for (w = 0; w <= sampleSize * 2; w++){
+        putchar(specialChar);
+    }
+
+    printf("\n");
+
+    for(x = sampleSize; x >= 0; x--){                                       /* reverse triangle print loop */
+        for(y = 0; y <= (sampleSize - x); y++)
+            printf(" ");
+        for(z = 1; z <= ((2 * x) - 1); z++)
+            putchar(lastInitial);
+
+        printf("\n");
+    }
+
+    printf("%s - End of Program", studentName);
+
+    return 0;
+}
