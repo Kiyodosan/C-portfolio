@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+int main(void)
+{
+    srand(time(NULL));
+
+    char studentName[] = "Tyler Odo";
+    char proj[] = "Project 4";
+    int x = diceRoll();
+    int y = diceRoll();
+
+    printf("%s - %s: Craps\n\n", studentName, proj);
+
+    int points = displayResult(x, y);
+
+    outcome(points);
+
+    printf("\n%s - End of %s", studentName, proj);
+
+    return 0;
+}
+
+diceRoll(void)
+{
+    int roll;
+    roll = (rand() % 6) + 1;
+
+    return roll;
+}
+
+displayResult(int n, int m)
+{
+    int result;
+    result = n + m;
+    printf("Player rolled %d + %d = %d\n", n, m, result);
+
+    return result;
+}
+
+outcome(int n)
+{
+    if(n == 7 || n == 11)
+        printf("\nPlayer wins.\n");
+    else if(n == 2 || n == 3 || n == 12)
+        printf("\nPlayer loses.\n");
+    else
+        reroll(n);
+}
+
+reroll(int n)
+{
+    int x, y, z, retry;
+    while(1){
+        retry = 0;
+
+        x = diceRoll();
+        y = diceRoll();
+        z = displayResult(x, y);
+
+        if(z == 7)
+            printf("\nPlayer loses.\n");
+        else if(z == n)
+            printf("\nPlayer wins.\n");
+        else
+            retry = 1;
+
+        if(retry == 0)
+            break;
+        }
+}
