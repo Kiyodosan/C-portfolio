@@ -29,9 +29,6 @@ int aveArray(int a[], int n);
 int  sumArray(int a[], int n);
 int  medianArray(int a[], int n);
 
-char stuName[12] = "Tyler Odo";
-char projName[12] = "Project 3";
-
 int main()
 {
     srand(time(NULL));                  /* The goal of this main function is to avoid using printf, hence the obscurity */
@@ -57,7 +54,6 @@ int main()
 
 void intro(int a[], int n)              /* Title parts */
 {
-    printf("%s - %s\n", stuName, projName);
     printf("Sample Size = %d\n", n);
     printf("Array elements:\n");
     printNum(a, n);
