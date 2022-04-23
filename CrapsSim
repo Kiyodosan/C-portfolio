@@ -4,18 +4,12 @@ int main(void)
 {
     srand(time(NULL));
 
-    char studentName[] = "Tyler Odo";
-    char proj[] = "Project 4";
     int x = diceRoll();
     int y = diceRoll();
-
-    printf("%s - %s: Craps\n\n", studentName, proj);
 
     int points = displayResult(x, y);
 
     outcome(points);
-
-    printf("\n%s - End of %s", studentName, proj);
 
     return 0;
 }
