@@ -11,9 +11,6 @@ Generates a diamond shape within a defined range
 
 int main(void)
 {
-    char studentName[12] = "Tyler Odo";
-    printf("%s - Project 2", studentName);
-
     int sampleSize;
 
     srand(time(NULL));                                                      /* seed random number */
@@ -53,8 +50,6 @@ int main(void)
 
         printf("\n");
     }
-
-    printf("%s - End of Program", studentName);
 
     return 0;
 }
